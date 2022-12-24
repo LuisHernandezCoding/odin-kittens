@@ -1,0 +1,21 @@
+<%= form_with(model: @kitten, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "input" %>
+  </div>
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age, class: "input" %>
+  </div>
+  <div class="field">
+    <%= form.label :cuteness %>
+    <%= form.number_field :cuteness, class: "input" %>
+  </div>
+  <div class="field">
+    <%= form.label :softness %>
+    <%= form.number_field :softness, class: "input" %>
+  </div>
+  <div class="actions">
+    <%= form.submit button_text, class: "button is-primary" %>
+  </div>
+<% end %>

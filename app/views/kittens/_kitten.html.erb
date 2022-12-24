@@ -1,0 +1,34 @@
+<h1 class="title is-1 has-text-centered"><%= kitten.name %>'s profile</h1>
+<br>
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      Personal Details
+    </p>
+  </header>
+  <div class="columns">
+    <div class="column is-one-quarter">
+      <div class="card-image py-5">
+        <figure class="image is-128x256">
+          <img src="https://placekitten.com/128/256" alt="Kitten profile picture" class="is-rounded">
+        </figure>
+      </div>
+    </div>
+    <div class="column is-half is-offset-1">
+      <div class="card-content">
+        <div class="content">
+          <p>
+            <strong>Age:</strong> <%= kitten.age %> Years
+          </p>
+          <br>
+          <p class="title is-4">Cuteness:</p>
+          <progress class="progress is-success" value="<%= kitten.cuteness %>" max="10"></progress>
+          <br>
+          <p class="title is-4">Softness:</p>
+          <progress class="progress is-info" value="<%= kitten.softness %>" max="10"></progress>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>

@@ -1,0 +1,7 @@
+<%= render 'kitten', kitten: @kitten %>
+<br>
+<div class="buttons is-centered">
+  <button class="button is-info" onclick="window.location.href='<%= edit_kitten_path(@kitten) %>'">Edit</button>
+  <%= button_to 'Delete', kitten_path(@kitten), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger' %>
+  <a class="button is-primary" href="<%= kittens_path %>">Back</a>
+</div>

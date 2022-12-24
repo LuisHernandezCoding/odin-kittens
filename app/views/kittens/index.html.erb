@@ -1,0 +1,46 @@
+<div class="box p-6">
+  <%= link_to 'New Kitten', new_kitten_path, class: 'button is-primary' %>
+  <br>
+  <hr>
+  <% if @kittens.empty? %>
+    <div class="card">
+      <div class="card-content">
+        <div class="content">
+          <p>No kittens found.</p>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Cuteness</th>
+          <th>Softness</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @kittens.each do |kitten| %>
+          <tr>
+            <td><%= kitten.id %></td>
+            <td><%= kitten.name %></td>
+            <td><%= kitten.age %></td>
+            <td><%= kitten.cuteness %></td>
+            <td><%= kitten.softness %></td>
+            <td>
+              <div class="buttons">
+                <%= link_to 'Show', kitten_path(kitten), class: 'button is-success is-outlined is-small' %>
+                <%= link_to 'Edit', edit_kitten_path(kitten), class: 'button is-info is-outlined is-small' %>
+                <%= button_to 'Delete', kitten_path(kitten), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger is-outlined is-small' %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+  
+</div>
