@@ -1,4 +1,4 @@
-<%= render 'kitten', kitten: @kitten %>
+<%= render 'kitten', kitten: @kitten, photos: @photos, flickr: @flickr %>
 <br>
 <div class="buttons is-centered">
   <button class="button is-info" onclick="window.location.href='<%= edit_kitten_path(@kitten) %>'">Edit</button>

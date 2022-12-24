@@ -1,17 +1,12 @@
 class KittensController < ApplicationController
+  before_action :set_flickr, only: %i[index show new]
+
   def index
     @kittens = Kitten.all
     respond_to do |format|
       format.html
       format.json { render json: @kittens }
     end
-
-    p key = ENV['FLICKR_API_KEY'] 
-    p secret = ENV['FLICKR_SHARED_SECRET']
-    flickr = Flickr.new(key, secret)
-
-    info = flickr.photos.getInfo(:photo_id => "3839885270")
-    @photo = Flickr.url_b(info)
   end
 
   def show
@@ -61,5 +56,12 @@ class KittensController < ApplicationController
 
   def kitten_params
     params.require(:kitten).permit(:name, :age, :cuteness, :softness)
+  end
+
+  def set_flickr
+    p key = ENV.fetch('FLICKR_API_KEY')
+    p secret = ENV.fetch('FLICKR_SHARED_SECRET')
+    @flickr = Flickr.new(key, secret)
+    @photos = @flickr.photos.search(profile: true, user_id: '197231518@N07')
   end
 end

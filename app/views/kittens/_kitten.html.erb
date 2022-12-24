@@ -7,14 +7,15 @@
     </p>
   </header>
   <div class="columns">
-    <div class="column is-one-quarter">
+    <div class="column is-5">
       <div class="card-image py-5">
-        <figure class="image is-128x256">
-          <img src="https://placekitten.com/128/256" alt="Kitten profile picture" class="is-rounded">
+        <figure class="image">
+          <% photo = @photos.to_a[kitten.id % photos.to_a.length] %>
+          <%= image_tag @flickr.photos.getSizes(photo_id: photo.id).to_a.last.source %>
         </figure>
       </div>
     </div>
-    <div class="column is-half is-offset-1">
+    <div class="column is-5">
       <div class="card-content">
         <div class="content">
           <p>
@@ -30,5 +31,4 @@
       </div>
     </div>
   </div>
-  <br>
 </div>
