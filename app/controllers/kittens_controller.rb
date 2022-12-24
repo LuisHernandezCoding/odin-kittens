@@ -5,6 +5,13 @@ class KittensController < ApplicationController
       format.html
       format.json { render json: @kittens }
     end
+
+    p key = ENV['FLICKR_API_KEY'] 
+    p secret = ENV['FLICKR_SHARED_SECRET']
+    flickr = Flickr.new(key, secret)
+
+    info = flickr.photos.getInfo(:photo_id => "3839885270")
+    @photo = Flickr.url_b(info)
   end
 
   def show

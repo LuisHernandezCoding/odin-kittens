@@ -1,6 +1,7 @@
 <div class="box p-6">
   <%= link_to 'New Kitten', new_kitten_path, class: 'button is-primary' %>
   <br>
+  <img src="<%= @photo %>" alt="kitten">
   <hr>
   <% if @kittens.empty? %>
     <div class="card">

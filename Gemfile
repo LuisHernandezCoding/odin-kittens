@@ -79,3 +79,6 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 # use rest-client for api calls
 gem 'rest-client'
+
+# Use Flickr API
+gem 'flickr', '~> 2.1'
