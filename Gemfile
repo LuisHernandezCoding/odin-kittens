@@ -76,3 +76,6 @@ gem 'bulma-rails', '~> 0.9.4'
 
 # Use rubocop for linting
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+# use rest-client for api calls
+gem 'rest-client'

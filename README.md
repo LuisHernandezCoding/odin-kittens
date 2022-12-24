@@ -36,8 +36,10 @@ Kitten was built with Ruby on Rails and utilizes a PostgreSQL database to store 
 - Linters (Rubocop and Stylelint)
 
 ## Author:
-👤 **[Insert your name here]**
-- GitHub: [Insert your GitHub username here]
+👤 **Luis Hernandez**
+
+- GitHub: [@LuisHernandezCoding](https://github.com/LuisHernandezCoding)
+- LinkedIn: [Luis Hernandez](https://www.linkedin.com/in/luis-hernandez-coding/)
 
 ## Credits:
 - [The Odin Project](https://www.theodinproject.com/)
